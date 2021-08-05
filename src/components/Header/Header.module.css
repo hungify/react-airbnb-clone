@@ -1,0 +1,142 @@
+.inner {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  background-color: #fff;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  padding: calc((5 / 4) * 16px);
+}
+
+.wrapper__logo {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  height: calc((10 / 4) * 16px);
+
+  cursor: pointer;
+  margin: auto 0;
+}
+
+.logo {
+  object-fit: cover;
+  object-position: left;
+
+  width: 102px;
+  height: 32px;
+}
+
+.wrapper__search {
+  display: flex;
+  align-items: center;
+
+  border-radius: 9999px;
+  padding: calc((2 / 4) * 16px) 0;
+}
+
+.input__search {
+  background-color: transparent;
+  padding-left: calc((5 / 4) * 16px);
+
+  flex-grow: 1;
+  outline: none;
+  border: none;
+
+  font-size: 0.9rem;
+  line-height: 1rem;
+
+  color: #718096;
+}
+
+.input__search::placeholder {
+  color: #cbd5e0;
+}
+
+.icon__search {
+  display: none;
+
+  height: calc((8 / 4) * 16px);
+  background-color: #fc8181;
+  color: #fff;
+
+  padding: calc((2 / 4) * 16px);
+  border-radius: 9999px;
+  cursor: pointer;
+}
+
+.wrapper__menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1rem * var(--tw-space-x-reverse));
+  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+
+  color: #a0aec0;
+}
+
+.title {
+  display: none;
+  cursor: pointer;
+}
+
+.globe__icon {
+  height: calc((6 / 4) * 16px);
+  cursor: pointer;
+
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1rem * var(--tw-space-x-reverse));
+  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+
+  border: 2px solid;
+  padding: calc((2 / 4) * 16px);
+
+  border-radius: 9999px;
+}
+
+.user__icon {
+  height: calc((6 / 4) * 16px);
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.menu__icon {
+  height: calc((6 / 4) * 16px);
+}
+
+/* md: */
+@media screen and (min-width: 768px) {
+  .inner {
+    padding: calc((10 / 4) * 16px);
+  }
+
+  .wrapper__search {
+    border: 2px solid #a0aec0;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  }
+
+  .icon__search {
+    display: inline-flex;
+    margin: 0 calc((2 / 4) * 16px);
+  }
+
+  .title {
+    display: inline;
+  }
+}
