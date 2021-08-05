@@ -8,7 +8,7 @@
 
   background-color: #fff;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  padding: calc((5 / 4) * 16px);
+  padding: 0 calc((4 / 4) * 16px);
 }
 
 .wrapper__logo {
@@ -36,7 +36,7 @@
   align-items: center;
 
   border-radius: 9999px;
-  padding: calc((2 / 4) * 16px) 0;
+  padding: calc((1 / 4) * 16px) 0;
 }
 
 .input__search {
@@ -104,7 +104,7 @@
   margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
 
   border: 2px solid;
-  padding: calc((2 / 4) * 16px);
+  padding: 0 calc((2 / 4) * 16px);
 
   border-radius: 9999px;
 }
@@ -123,7 +123,7 @@
 /* md: */
 @media screen and (min-width: 768px) {
   .inner {
-    padding: calc((10 / 4) * 16px);
+    padding: calc((2 / 4) * 16px);
   }
 
   .wrapper__search {
