@@ -8,7 +8,11 @@
 
   background-color: #fff;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  padding: 0 calc((4 / 4) * 16px);
+  padding-top: calc((5 / 4) * 16px);
+  padding-bottom: calc((5 / 4) * 16px);
+
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
 }
 
 .wrapper__logo {
@@ -36,7 +40,7 @@
   align-items: center;
 
   border-radius: 9999px;
-  padding: calc((1 / 4) * 16px) 0;
+  padding: calc((2 / 4) * 16px) 0;
 }
 
 .input__search {
@@ -44,13 +48,14 @@
   padding-left: calc((5 / 4) * 16px);
 
   flex-grow: 1;
-  outline: none;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
   border: none;
 
   font-size: 0.9rem;
   line-height: 1rem;
 
-  color: #718096;
+  color: rgba(75, 85, 99);
 }
 
 .input__search::placeholder {
@@ -64,7 +69,10 @@
   background-color: #fc8181;
   color: #fff;
 
-  padding: calc((2 / 4) * 16px);
+  width: 16px;
+  height: 16px;
+
+  padding: 0.5rem;
   border-radius: 9999px;
   cursor: pointer;
 }
@@ -100,11 +108,11 @@
   align-items: center;
 
   --tw-space-x-reverse: 0;
-  margin-right: calc(0.5rem * var(--tw-space-x-reverse));
-  margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+  margin-right: calc(1rem * var(--tw-space-x-reverse));
+  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
 
   border: 2px solid;
-  padding: 0 calc((2 / 4) * 16px);
+  padding: calc((2 / 4) * 16px);
 
   border-radius: 9999px;
 }
@@ -123,7 +131,8 @@
 /* md: */
 @media screen and (min-width: 768px) {
   .inner {
-    padding: calc((2 / 4) * 16px);
+    padding-left: calc((10 / 4) * 16px);
+    padding-right: calc((10 / 4) * 16px);
   }
 
   .wrapper__search {
