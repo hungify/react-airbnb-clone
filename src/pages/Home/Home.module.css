@@ -34,9 +34,6 @@
 /* Section second */
 
 .wrapper__sm_card {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(0.75rem * var(--tw-space-x-reverse));
-  margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .flex {
