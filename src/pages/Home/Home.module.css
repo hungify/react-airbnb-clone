@@ -22,9 +22,6 @@
   padding-bottom: calc((5 / 4) * 16px);
 }
 
-/* .wrapper__card {
-} */
-
 .grid {
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -33,11 +30,13 @@
 
 /* Section second */
 
-.wrapper__sm_card {
-}
-
 .flex {
   display: flex;
+}
+
+.wrapper__md_card {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
 }
 
 .p_y_8 {
@@ -66,5 +65,9 @@
 @media screen and (min-width: 1280px) {
   .wrapper__sm_card {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .wrapper__md_card {
+    overflow: hidden;
   }
 }
