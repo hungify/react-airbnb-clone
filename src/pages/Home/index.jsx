@@ -14,10 +14,11 @@ Home.propTypes = {};
 
 function Home() {
   return (
-    <>
+    <div>
       <Header />
-      <Banner />
+
       <main className={homeStyle.wrapper}>
+        <Banner />
         <section className={homeStyle.location}>
           <h2 className={`${homeStyle.title} ${homeStyle.p_b_5}`}>Explore Nearby</h2>
           <div className={`${homeStyle.wrapper__sm_card} ${homeStyle.grid}`}>
@@ -50,7 +51,7 @@ function Home() {
         />
       </main>
       <Footer />
-    </>
+    </div>
   );
 }
 
