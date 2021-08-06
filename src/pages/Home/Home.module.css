@@ -1,8 +1,8 @@
 .wrapper {
-  max-width: 80rem;
+  /* max-width: 80rem;
   margin: 0 auto;
 
-  padding: 0 calc((8 / 4) * 16px);
+  padding: 0 calc((8 / 4) * 16px); */
 }
 
 /* Section first */
@@ -37,6 +37,8 @@
 .wrapper__md_card {
   overflow-x: auto;
   scroll-snap-type: x mandatory;
+
+  padding: 0.75rem;
 }
 
 .p_y_8 {
@@ -45,7 +47,7 @@
 
 @media screen and (min-width: 640px) {
   .wrapper {
-    padding: 0 calc((16 / 4) * 16px);
+    /* padding: 0 calc((16 / 4) * 16px); */
   }
 
   .wrapper__sm_card {
