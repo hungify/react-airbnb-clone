@@ -59,7 +59,8 @@
 }
 
 .input__search::placeholder {
-  color: #cbd5e0;
+  color: rgba(107, 114, 128);
+  font-size: 16px;
 }
 
 .icon__search {
@@ -77,6 +78,12 @@
   cursor: pointer;
 }
 
+.wrapper__date{
+  
+}
+
+
+
 .wrapper__menu {
   display: flex;
   align-items: center;
@@ -86,7 +93,7 @@
   margin-right: calc(1rem * var(--tw-space-x-reverse));
   margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
 
-  color: #a0aec0;
+  color: rgba(107, 114, 128, 0.6);
 }
 
 .title {
@@ -101,6 +108,16 @@
   --tw-space-x-reverse: 0;
   margin-right: calc(1rem * var(--tw-space-x-reverse));
   margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .menu {

@@ -37,6 +37,8 @@
 .wrapper__md_card {
   overflow-x: auto;
   scroll-snap-type: x mandatory;
+
+  padding: 0.75rem;
 }
 
 .p_y_8 {
