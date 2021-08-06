@@ -6,17 +6,21 @@ Banner.propTypes = {};
 
 function Banner(props) {
   return (
-    <div className={bannerStyle.wrapper__img}>
-      <img
+    <section className={bannerStyle.img__overlay}>
+      {/* <img
         src="https://a0.muscache.com/im/pictures/57b9f708-bb12-498c-bc33-769f8fc43e63.jpg"
         alt="tree"
         className={bannerStyle.img}
-      />
+      /> */}
       <div className={bannerStyle.wrapper__text}>
-        <p className={bannerStyle.text}>Not sure where to go? Perfect.</p>
-        <button className={bannerStyle.button}>I'm flexible</button>
+        <span className={bannerStyle.text__inner}>
+          <h1 className={bannerStyle.title}>Olympian & Paralympian Online Experiences</h1>
+          <a href="#" className={bannerStyle.button}>
+            Explore Now
+          </a>
+        </span>
       </div>
-    </div>
+    </section>
   );
 }
 
