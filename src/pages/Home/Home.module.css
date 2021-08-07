@@ -1,5 +1,5 @@
 .main {
-  /* max-width: 80rem; */
+  max-width: 98%;
 
   padding-left: 2rem;
   padding-right: 2rem;
@@ -38,7 +38,7 @@
   overflow-x: auto;
   scroll-snap-type: x mandatory;
 
-  padding: 0.75rem;
+  padding: 0.5rem;
 }
 
 .p_y_8 {
@@ -47,8 +47,8 @@
 
 @media screen and (min-width: 640px) {
   .main {
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .wrapper__sm_card {

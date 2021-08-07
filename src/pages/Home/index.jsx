@@ -43,10 +43,10 @@ function Home() {
         </section>
 
         <LargeCard
-          img="https://a0.muscache.com/im/pictures/2da67c1c-0c61-4629-8798-1d4de1ac9291.jpg?im_w=1440"
-          title="The Greatest Outdoors"
-          description="Wishlists curated by Airbnb"
-          buttonText="Get Inspired"
+          img="https://airbnb-clone-taupe.vercel.app/_next/image?url=%2Fbigcards%2Ftryhosting.webp&w=1920&q=75"
+          title="Try hosting"
+          description="Earn extra income and unlock new opportunities by sharing your space"
+          buttonText="Learn more"
         />
       </main>
       <Footer />
