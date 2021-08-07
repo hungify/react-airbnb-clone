@@ -10,7 +10,7 @@
   min-width: 300px;
 }
 
-.wrapper__img > div {
+.wrapper__img > div:first-child {
   display: block;
   overflow: hidden;
   position: absolute;
@@ -45,7 +45,7 @@
   animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-@keyframes pulse {
+/* @keyframes pulse {
   0%,
   100% {
     opacity: 1;
@@ -53,12 +53,26 @@
   50% {
     opacity: 0.5;
   }
-}
+} */
 
 .wrapper__text {
   position: absolute;
-  left: 3rem;
-  top: 8rem;
+
+  color: #1a202c;
+  background-color: transparent;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+
+  height: 100%;
+  width: 360px;
 }
 
 .title {
@@ -71,9 +85,10 @@
 .btn {
   font-size: 0.875rem;
   line-height: 1.25rem;
+  font-weight: 600;
 
-  color: #fff;
-  background-color: #1a202c;
+  color: #1a202c;
+  background-color: #fff;
 
   padding: calc((2 / 4) * 16px) calc((4 / 4) * 16px);
   margin-top: calc((5 / 4) * 16px);
@@ -81,4 +96,14 @@
   border-radius: 0.5rem;
   border: none;
   cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .wrapper__text {
+    justify-content: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 0;
+    color: #fff;
+  }
 }

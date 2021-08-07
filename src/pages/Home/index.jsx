@@ -1,10 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Header from '../../components/Header';
 import Banner from '../../components/Banner';
 import homeStyle from './Home.module.css';
 import SmallCard from '../../components/SmallCard';
-
 import { ExploreData, LiveAnywhereData } from '../../db/db';
 import MediumCard from '../../components/MediumCard';
 import LargeCard from '../../components/LargeCard';
@@ -13,9 +12,36 @@ import Footer from '../../components/Footer';
 Home.propTypes = {};
 
 function Home() {
+  const [showSearch, setShowSearch] = useState(false);
+  const [closeNavbar, setCloseNavBar] = useState(false);
+  const [positionScroll, setPositionScroll] = useState(0);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [positionScroll]);
+
+  const handleScroll = () => {
+    const positionY = window.scrollY;
+    setPositionScroll(positionY);
+    console.log(positionY);
+    if (positionY >= 80) {
+      setShowSearch(true);
+    } else {
+      setShowSearch(false);
+    }
+    if (positionY >= 600) {
+      setCloseNavBar(true);
+    } else {
+      setCloseNavBar(false);
+    }
+  };
   return (
     <>
-      <Header />
+      <Header showSearch={showSearch} />
       <Banner />
       <main className={homeStyle.main}>
         <section className={homeStyle.location}>
@@ -35,7 +61,7 @@ function Home() {
         <section>
           <h2 className={`${homeStyle.title} ${homeStyle.p_y_8}`}>Live Anywhere</h2>
 
-          <div className={`${homeStyle.flex} ${homeStyle.wrapper__md_card} `}>
+          <div className={` ${homeStyle.wrapper__md_card} `}>
             {LiveAnywhereData.map(({ img, title }) => (
               <MediumCard key={img} img={img} title={title} />
             ))}
@@ -49,7 +75,7 @@ function Home() {
           buttonText="Learn more"
         />
       </main>
-      <Footer />
+      <Footer closeNavbar={closeNavbar} />
     </>
   );
 }

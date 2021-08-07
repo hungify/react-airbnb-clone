@@ -1,12 +1,13 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import NavBar from '../Navbar';
+import PropTypes from 'prop-types';
 import styled from './Footer.module.css';
 
-import { HomeIcon, SearchIcon, HeartIcon, UserIcon } from '@heroicons/react/solid';
+Footer.propTypes = {
+  closeNavbar: PropTypes.bool,
+};
 
-// Footer.propTypes = {};
-
-function Footer(props) {
+function Footer({ closeNavbar }) {
   return (
     <>
       <footer>
@@ -51,26 +52,7 @@ function Footer(props) {
           <p className={styled.desc}>Trust & Safety</p>
         </div>
       </footer>
-      <div className={styled.navbar}>
-        <div className={styled.wrapper__link}>
-          <div className={`${styled.group__icon} ${styled.active}`}>
-            <HomeIcon className={styled.icon} />
-            <p>Home</p>
-          </div>
-          <div className={styled.group__icon}>
-            <SearchIcon className={styled.icon} />
-            <p>Explore</p>
-          </div>
-          <div className={styled.group__icon}>
-            <HeartIcon className={styled.icon} />
-            <p>Wishlists</p>
-          </div>
-          <div className={styled.group__icon}>
-            <UserIcon className={styled.icon} />
-            <p>Login</p>
-          </div>
-        </div>
-      </div>
+      <NavBar closeNavbar={closeNavbar} />
     </>
   );
 }
