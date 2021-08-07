@@ -6,9 +6,11 @@ LargeCard.propTypes = {};
 
 function LargeCard({ img, title, description, buttonText }) {
   return (
-    <section className={styled.inner}>
+    <section className={styled.hero__inner}>
       <div className={styled.wrapper__img}>
-        <img src={img} alt={title} className={styled.img} />
+        <div>
+          <img src={img} alt={title} className={styled.img} />
+        </div>
       </div>
       <div className={styled.wrapper__text}>
         <h3 className={styled.title}>{title}</h3>
