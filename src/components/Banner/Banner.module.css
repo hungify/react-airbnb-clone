@@ -1,6 +1,6 @@
 .img__overlay {
-  /* position: relative;
-  height: 300px; */
+  position: relative;
+  height: 550px;
   background: linear-gradient(rgba(10, 12, 44, 0.5) 3rem, transparent 10rem) center center / cover,
     url(https://a0.muscache.com/im/pictures/e4a2a61c-589f-4e49-b3b8-968a6bc23389.jpg) left bottom /
       cover;
@@ -9,43 +9,65 @@
   padding: 15rem 3rem 6rem;
 }
 
-.img {
-  width: 100%;
-  height: 100%;
+.wrapper__hero {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  box-sizing: border-box;
+  margin: 0;
+}
+.wrapper__hero img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  box-sizing: border-box;
+  padding: 0;
+  border: none;
+  margin: auto;
+  display: block;
+  width: 0;
+  height: 0;
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  max-height: 100%;
   object-fit: cover;
 }
 
 .wrapper__text {
-  display: flex;
-  max-width: 1200px;
-  margin: 0px auto;
-}
-
-.text__inner {
-  max-width: 40%;
+  position: absolute;
+  top: 6rem;
+  left: 50%;
+  font-weight: 700;
+  width: 75%;
+  transform: translate(-50%);
+  text-align: center;
 }
 
 .title {
-  font-weight: 900;
-  font-size: clamp(2rem, 5.5vw, 3.25rem);
-  line-height: 1.2;
-  margin-bottom: 1.5rem;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 
 .button {
-  display: inline-block;
-  white-space: nowrap;
-  padding: 0.75rem 1.5rem;
-  font-size: 1.15rem;
   font-weight: 600;
-  color: #484848;
-  background: #fafafc;
-  border-radius: 0.66rem;
-  -webkit-transition: all 0.2s;
-  -moz-transition: all 0.2s;
-  transition: all 0.2s;
-  -webkit-box-shadow: 0 0.5rem 1.5rem -0.5rem currentColor;
-  box-shadow: 0 0.5rem 1.5rem -0.5rem currentColor;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: #222;
+
+  margin-top: 1.25rem;
+  padding: 0.5rem 0.75rem;
+  background-color: #fafafc;
+  border-radius: 0.5rem;
+  border: none;
+  outline: none;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
 
 .button:hover {
@@ -55,18 +77,35 @@
 
 .button:active {
   transform: scale(0.9);
-  transition: all cubic-bezier(0.075, 0.82, 0.165, 1);
-  transition-duration: 150ms;
+  transition: transform 0.15s ease-out;
 }
 
 @media screen and (min-width: 640px) {
   .img__overlay {
-    height: 400px;
+    height: 650px;
   }
 
   .text {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .img__overlay {
+    height: 680px;
+  }
+
+  .wrapper__text {
+    left: 5rem;
+    width: 25%;
+    top: 15rem;
+    text-align: left;
+    transform: none;
+  }
+  .title {
+    font-size: 3.75rem;
+    line-height: 1;
   }
 }
 

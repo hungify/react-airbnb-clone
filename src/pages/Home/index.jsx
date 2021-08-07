@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Header from '../../components/Header';
 import Banner from '../../components/Banner';
@@ -14,11 +14,10 @@ Home.propTypes = {};
 
 function Home() {
   return (
-    <div>
+    <>
       <Header />
-
-      <main className={homeStyle.wrapper}>
-        <Banner />
+      <Banner />
+      <main className={homeStyle.main}>
         <section className={homeStyle.location}>
           <h2 className={`${homeStyle.title} ${homeStyle.p_b_5}`}>Explore Nearby</h2>
           <div className={`${homeStyle.wrapper__sm_card} ${homeStyle.grid}`}>
@@ -51,7 +50,7 @@ function Home() {
         />
       </main>
       <Footer />
-    </div>
+    </>
   );
 }
 
