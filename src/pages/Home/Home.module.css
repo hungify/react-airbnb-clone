@@ -1,5 +1,6 @@
 .main {
-  max-width: 98%;
+  max-width: 95rem;
+  margin: 0 auto;
 
   padding-left: 2rem;
   padding-right: 2rem;
@@ -30,11 +31,10 @@
 
 /* Section second */
 
-.flex {
-  display: flex;
-}
-
 .wrapper__md_card {
+  display: flex;
+  justify-content: space-between;
+
   overflow-x: auto;
   scroll-snap-type: x mandatory;
 
@@ -47,8 +47,8 @@
 
 @media screen and (min-width: 640px) {
   .main {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
   }
 
   .wrapper__sm_card {
