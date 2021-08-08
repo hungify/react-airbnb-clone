@@ -10,7 +10,7 @@
 
 .img__overlay > div {
   display: flex;
-  margin: 0px auto;
+  margin: 0px 2rem;
   max-width: 100%;
   font-weight: 700;
 }
@@ -22,26 +22,30 @@
 .title {
   font-size: 1.875rem;
   line-height: 2.25rem;
+  margin-bottom: 1.5rem;
 }
 
 .button {
   font-weight: 600;
-  font-size: 0.875rem;
+  font-size: 1.15rem;
   line-height: 1.25rem;
   color: #222;
 
+  display: inline-block;
   margin-top: 1.25rem;
-  padding: 0.5rem 0.75rem;
+  padding: 0.75rem 1.5rem;
   background-color: #fafafc;
   border-radius: 0.5rem;
   border: none;
   outline: none;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0.5rem 1.5rem -0.5rem currentColor;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
 }
 
-.button:hover {
-  cursor: pointer;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+.button:hover,
+.button:focus {
+  box-shadow: 0 0 0 2px #262648, 0 0 0 4px #fafafc;
 }
 
 .button:active {
@@ -70,7 +74,7 @@
   }
 
   .wrapper__text {
-    width: 50%;
+    max-width: 30%;
   }
 
   .title {
