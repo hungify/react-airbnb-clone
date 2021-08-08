@@ -8,7 +8,7 @@ function LargeCard({ img, title, description, buttonText }) {
   return (
     <section className={styled.hero__inner}>
       <div className={styled.wrapper__img}>
-        <div> 
+        <div>
           <img src={img} alt={title} className={styled.img} />
         </div>
         <div className={styled.wrapper__text}>
