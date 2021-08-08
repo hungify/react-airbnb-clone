@@ -10,9 +10,9 @@ function Hero(props) {
       <div>
         <div className={styled.wrapper__text}>
           <h2 className={styled.title}>Olympian & Paralympian Online Experiences</h2>
-          <button href="#" className={styled.button}>
+          <a href="#" className={styled.button}>
             Explore Now
-          </button>
+          </a>
         </div>
       </div>
     </section>

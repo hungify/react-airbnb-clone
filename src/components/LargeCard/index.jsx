@@ -3,26 +3,27 @@ import PropTypes from 'prop-types';
 import styled from './LargeCard.module.css';
 
 LargeCard.propTypes = {
-  img: PropTypes.string,
-  title: PropTypes.string,
-  description: PropTypes.string,
-  buttonText: PropTypes.string,
-  isBanner: PropTypes.bool,
+  DiscoverData: PropTypes.array,
 };
 
-function LargeCard({ img, title, description, buttonText, isBanner }) {
+function LargeCard({ DiscoverData }) {
   return (
-    <section className={isBanner ? `${styled.banner} ${styled.lg__card}` : `${styled.lg__card}`}>
-      <div className={styled.wrapper__img}>
-        <div>
-          <img src={img} alt={title} className={styled.img} />
-        </div>
-        <div className={styled.wrapper__text}>
-          <h3 className={styled.title}>{title}</h3>
-          <p className={styled.desc}>{description}</p>
-
-          <button className={styled.btn}>{buttonText}</button>
-        </div>
+    <section className={styled.lg__card}>
+      <h2>Discover things to do</h2>
+      <div className={styled.card__list}>
+        {DiscoverData.map(({ title, description, img }) => (
+          <div className={styled.card}>
+            <div className={styled.wrapper__img}>
+              <div>
+                <img src={img} alt={title} className={styled.img} />
+              </div>
+            </div>
+            <span className={styled.wrapper__text}>
+              <h3>{title}</h3>
+              <p>{description}</p>
+            </span>
+          </div>
+        ))}
       </div>
     </section>
   );

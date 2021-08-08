@@ -2,7 +2,6 @@
 
 .sm__card {
   padding-top: 1.5rem;
-
   margin: 3rem 3rem 0;
 }
 
@@ -16,12 +15,13 @@
 .wrapper__card {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-  margin-bottom: -1.5rem;
-  padding: 1.5rem 0px;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: 1.5rem;
+
+  overflow: auto;
 }
 
-.inner {
+.card__inner {
   margin-top: 1.25rem;
   margin: 8px;
 
@@ -32,9 +32,12 @@
 
   display: flex;
   align-items: center;
+
+  cursor: pointer;
+  scroll-snap-align: start;
 }
 
-.inner:hover {
+.card__inner:hover {
   background-color: rgba(243, 244, 246);
   transform: scale(1.05);
 }
@@ -54,9 +57,8 @@
 }
 
 .wrapper__text {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(1rem * var(--tw-space-x-reverse));
-  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+  margin-right: 0;
+  margin-left: 16px;
 }
 
 .title {
@@ -89,5 +91,9 @@
 @media screen and (min-width: 1280px) {
   .wrapper__sm_card {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .card__inner {
+    overflow: hidden;
   }
 }

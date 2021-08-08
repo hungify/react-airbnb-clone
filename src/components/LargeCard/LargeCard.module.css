@@ -2,13 +2,32 @@
   margin: 3rem 3rem 0;
 }
 
-.wrapper__img {
-  position: relative;
-  height: 24rem;
-  min-width: 300px;
+.lg__card h2 {
+  font-weight: 600;
+  font-size: 1.75rem;
 }
 
-.wrapper__img > div:first-child {
+.card__list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 1.5rem;
+  padding: 1.5rem 0px;
+}
+
+.card {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper__img {
+  width: 15rem;
+  height: 15rem;
+  position: relative;
+}
+
+.wrapper__img > div {
   display: block;
   overflow: hidden;
   position: absolute;
@@ -18,9 +37,17 @@
   right: 0;
   box-sizing: border-box;
   margin: 0;
+  border-radius: 0.75rem;
+}
+
+.card:hover .img {
+  transform: scale(1);
+  transition: all 0.2s ease-out 0.1ms;
 }
 
 .img {
+  transition: all 0.2s linear 0.1ms;
+  transform: scale(1.1);
   position: absolute;
   top: 0;
   left: 0;
@@ -37,71 +64,42 @@
   max-width: 100%;
   min-height: 100%;
   max-height: 100%;
-  object-fit: cover;
-
-  border-radius: 1rem;
-  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  border-radius: 0.75rem;
 }
-
-/* @keyframes pulse {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-} */
 
 .wrapper__text {
-  position: absolute;
-
-  color: #1a202c;
-  background-color: transparent;
-
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  text-align: left;
-
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 10px;
-
-  height: 100%;
-  width: 360px;
+  margin-top: 0.75rem;
+  line-height: 1.5;
 }
 
-.title {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-  margin-bottom: 0.75rem;
-  width: 16rem;
-}
-
-.btn {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  font-weight: 600;
-
-  color: #1a202c;
-  background-color: #fff;
-
-  padding: calc((2 / 4) * 16px) calc((4 / 4) * 16px);
-  margin-top: calc((5 / 4) * 16px);
-
-  border-radius: 0.5rem;
-  border: none;
-  cursor: pointer;
+.wrapper__text h3 {
+  font-size: 1.25rem;
+  line-height: 30px;
 }
 
 @media screen and (min-width: 768px) {
-  .wrapper__text {
-    justify-content: center;
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-top: 0;
-    color: #fff;
+  .wrapper__img {
+    width: 24rem;
+    height: 24rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .wrapper__img {
+    width: 19rem;
+    height: 19rem;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .wrapper__img {
+    width: 24rem;
+    height: 24rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .wrapper__img {
+    width: 27rem;
+    height: 27rem;
   }
 }

@@ -9,10 +9,10 @@ MediumCard.propTypes = {
 function MediumCard({ LiveAnywhereData }) {
   return (
     <section className={styled.md_card}>
-      <h2 className={`${styled.title}`}>Live Anywhere</h2>
+      <h2 className={`${styled.heading}`}>Live Anywhere</h2>
       <div className={` ${styled.wrapper__card} `}>
         {LiveAnywhereData.map(({ img, title }) => (
-          <div className={styled.inner} key={img}>
+          <div className={styled.card__inner} key={img}>
             <div className={styled.wrapper__img}>
               <div>
                 <img className={styled.img} src={img} alt={title} />

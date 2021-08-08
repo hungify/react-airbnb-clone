@@ -10,10 +10,14 @@ header {
 
   z-index: 10;
 
+  transition: all 0.2s ease 0s;
+}
+
+.wrapper__header {
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
-
-  transition: all 0.5s;
+  max-width: 100%;
+  margin: 0px auto;
 }
 
 .logo__icon {
@@ -23,9 +27,8 @@ header {
 /* When user scrolling */
 .scrolled {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  background-color: #fff;
-
-  /* transition: all 0.5 ease-in-out; */
+  background-color: #fafafc;
+  transition: all 0.5s ease-in;
 }
 
 .scrolled .logo__icon {
@@ -103,17 +106,10 @@ header {
   left: 50%;
 
   transform: translateX(-50%);
-  transition: transform 0.1s ease-out 0.2s;
+  transition: all 0.2s ease 0s;
 }
 
 /* When user scrolling */
-
-.scrolled .wrapper__search_inner {
-  width: 0;
-  opacity: 0;
-  transform: translateY(-2.5rem);
-  transition: all 0.2s ease-in-out;
-}
 
 .navbar {
   color: rgb(229, 231, 235);
@@ -153,8 +149,7 @@ header {
 }
 
 .wrapper__search {
-  --tw-bg-opacity: 1;
-  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  background-color: rgba(255, 255, 255);
 
   border-radius: 9999px;
   align-items: center;
@@ -163,6 +158,10 @@ header {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 
   color: #666;
+}
+
+.scrolled .wrapper__search {
+  opacity: 0;
 }
 
 .wrapper__location {
@@ -432,56 +431,8 @@ header {
   color: rgba(107, 114, 128);
 }
 
-/* lg: Tablet */
-.search__tablet {
-  display: flex;
-  align-items: center;
-
-  z-index: 50;
-  border-width: 2px;
-  border-radius: 9999px;
-
-  --tw-bg-opacity: 1;
-  background-color: rgba(243, 244, 246, var(--tw-bg-opacity));
-  grid-column-start: 1;
-  grid-column-end: 7;
-}
-
-.search__tablet input {
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-  border: none;
-  --tw-text-opacity: 1;
-  color: rgba(75, 85, 99, var(--tw-text-opacity));
-
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  text-align: center;
-  padding-left: 1.25rem;
-
-  background-color: transparent;
-  flex-grow: 1;
-  width: 100%;
-}
-
-.search__tablet input::placeholder {
-  --tw-text-opacity: 1;
-  color: rgba(55, 65, 81, var(--tw-text-opacity));
-}
-
-.search__tablet .search__icon {
-  color: rgb(255, 255, 255);
-  padding: 0.5rem;
-  width: 3rem;
-
-  background-color: rgb(248, 113, 113);
-  border-radius: 9999px;
-  cursor: pointer;
-}
-
 /* md: Mobile*/
 .search__mobile {
-  display: none;
   align-items: center;
 
   z-index: 50;
@@ -493,7 +444,6 @@ header {
   grid-column-end: 5;
 
   padding: 0.5rem 0;
-
   display: none;
 }
 
@@ -524,19 +474,10 @@ header {
 }
 
 /* Response */
-@media screen and (min-width: 768px) {
-  header {
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
-  }
 
-  .header__inner {
-    display: flex;
-  }
-
-  .search__mobile {
-    display: none;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+@media screen and (min-width: 375px) {
+  .wrapper__header {
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
   }
 
   .search__mobile .search__icon {
@@ -545,22 +486,20 @@ header {
     margin-left: 0.5rem;
     margin-right: 0.5rem;
   }
+}
+
+@media screen and (min-width: 768px) {
+  header {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .header__inner {
+    display: flex;
+  }
 
   .wrapper__logo {
     display: flex;
-  }
-
-  .search__tablet {
-    display: none;
-  }
-
-  .scrolled .search__mobile {
-    display: flex;
-  }
-
-  .wrapper__search_inner {
-    width: 85%;
-    display: block;
   }
 
   .icon__search {
@@ -569,18 +508,33 @@ header {
     margin-left: 0.5rem;
     margin-right: 0.5rem;
   }
+
   .profile {
     display: flex;
-  }
-
-  .profile .link {
-    display: inline-flex;
   }
 }
 
 @media screen and (min-width: 1024px) {
+  .scrolled .wrapper__search_inner {
+    display: none;
+  }
+  .wrapper__search_inner {
+    width: 85%;
+    display: block;
+  }
+  .search__mobile {
+    display: none;
+  }
+
+  .scrolled .search__mobile {
+    display: flex;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  }
   .wrapper__search_inner {
     width: 66.666667%;
     top: 2rem;
+  }
+  .profile .link {
+    display: inline-flex;
   }
 }

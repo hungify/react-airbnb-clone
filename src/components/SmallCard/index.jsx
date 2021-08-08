@@ -12,7 +12,7 @@ function SmallCard({ ExploreData }) {
       <h2 className={`${styled.title}`}>Explore Nearby</h2>
       <div className={`${styled.wrapper__card} `}>
         {ExploreData?.map(({ img, distance, location }) => (
-          <div className={`${styled.inner}`} key={location}>
+          <div className={`${styled.card__inner}`} key={location}>
             <div className={styled.wrapper__img}>
               <img src={img} alt="" className={styled.img} />
             </div>
