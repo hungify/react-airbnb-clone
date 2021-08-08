@@ -1,20 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import smallCardStyle from './SmallCard.module.css';
+import styled from './SmallCard.module.css';
 
-SmallCard.propTypes = {};
+SmallCard.propTypes = {
+  ExploreData: PropTypes.array,
+};
 
-function SmallCard({ img, distance, location }) {
+function SmallCard({ ExploreData }) {
   return (
-    <div className={`${smallCardStyle.flex} ${smallCardStyle.inner}`}>
-      <div className={smallCardStyle.wrapper__img}>
-        <img src={img} alt="" className={smallCardStyle.img} />
+    <section className={styled.sm__card}>
+      <h2 className={`${styled.title}`}>Explore Nearby</h2>
+      <div className={`${styled.wrapper__card} `}>
+        {ExploreData?.map(({ img, distance, location }) => (
+          <div className={`${styled.inner}`} key={location}>
+            <div className={styled.wrapper__img}>
+              <img src={img} alt="" className={styled.img} />
+            </div>
+            <div className={styled.wrapper__text}>
+              <h2 className={styled.title}>{location}</h2>
+              <h2 className={styled.text}>{distance}</h2>
+            </div>
+          </div>
+        ))}
       </div>
-      <div className={smallCardStyle.wrapper__text}>
-        <h2 className={smallCardStyle.title}>{location}</h2>
-        <h2 className={smallCardStyle.text}>{distance}</h2>
-      </div>
-    </div>
+    </section>
   );
 }
 

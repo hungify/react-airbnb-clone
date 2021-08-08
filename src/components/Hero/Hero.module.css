@@ -1,0 +1,89 @@
+.img__overlay {
+  background: linear-gradient(rgba(10, 12, 44, 0.5) 3rem, transparent) center center / cover,
+    url(https://a0.muscache.com/im/pictures/9754b160-759d-489b-92ad-8846fc94b73d.jpg?im_w=720) left
+      bottom / cover;
+  padding-top: 7.5rem;
+  height: 75vh;
+  max-height: 720px;
+  color: #fafafc;
+}
+
+.img__overlay > div {
+  display: flex;
+  margin: 0px auto;
+  max-width: 100%;
+  font-weight: 700;
+}
+
+.wrapper__text {
+  width: 100%;
+}
+
+.title {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.button {
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: #222;
+
+  margin-top: 1.25rem;
+  padding: 0.5rem 0.75rem;
+  background-color: #fafafc;
+  border-radius: 0.5rem;
+  border: none;
+  outline: none;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.button:hover {
+  cursor: pointer;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.button:active {
+  transform: scale(0.9);
+  transition: transform 0.15s ease-out;
+}
+
+@media screen and (min-width: 640px) {
+  .img__overlay {
+    background: linear-gradient(rgba(10, 12, 44, 0.5) 3rem, transparent 10rem) center center / cover,
+      url(https://a0.muscache.com/im/pictures/e4a2a61c-589f-4e49-b3b8-968a6bc23389.jpg) left bottom /
+        cover;
+    height: fit-content;
+    padding: 15rem 3rem 6rem;
+  }
+
+  .text {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .img__overlay {
+    height: 680px;
+  }
+
+  .wrapper__text {
+    width: 50%;
+  }
+
+  .title {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+}
+
+@media screen and (min-width: 1280px) {
+}
+
+@media screen and (min-width: 1536px) {
+}

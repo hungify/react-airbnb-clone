@@ -1,3 +1,26 @@
+/* Section first */
+
+.sm__card {
+  padding-top: 1.5rem;
+
+  margin: 3rem 3rem 0;
+}
+
+.title {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  padding-bottom: calc((5 / 4) * 16px);
+  font-weight: 600;
+}
+
+.wrapper__card {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: -1.5rem;
+  padding: 1.5rem 0px;
+}
+
 .inner {
   margin-top: 1.25rem;
   margin: 8px;
@@ -6,9 +29,7 @@
   cursor: pointer;
 
   transition: all 0.3s ease-out 0.01ms;
-}
 
-.flex {
   display: flex;
   align-items: center;
 }
@@ -48,4 +69,25 @@
   font-size: 16px;
   color: rgba(107, 114, 128);
   font-weight: 400;
+}
+
+@media screen and (min-width: 640px) {
+  .wrapper__sm_card {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 1024px) {
+  .wrapper__sm_card {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .wrapper__sm_card {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
 }

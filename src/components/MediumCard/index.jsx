@@ -3,20 +3,26 @@ import PropTypes from 'prop-types';
 import styled from './MediumCard.module.css';
 
 MediumCard.propTypes = {
-  img: PropTypes.string,
-  title: PropTypes.string,
+  LiveAnywhereData: PropTypes.array,
 };
 
-function MediumCard({ img, title }) {
+function MediumCard({ LiveAnywhereData }) {
   return (
-    <div className={styled.inner}>
-      <div className={styled.wrapper__img}>
-        <div>
-          <img className={styled.img} src={img} alt={title} />
-        </div>
+    <section className={styled.md_card}>
+      <h2 className={`${styled.title}`}>Live Anywhere</h2>
+      <div className={` ${styled.wrapper__card} `}>
+        {LiveAnywhereData.map(({ img, title }) => (
+          <div className={styled.inner} key={img}>
+            <div className={styled.wrapper__img}>
+              <div>
+                <img className={styled.img} src={img} alt={title} />
+              </div>
+            </div>
+            <h3 className={styled.sub}>{title}</h3>
+          </div>
+        ))}
       </div>
-      <h3 className={styled.title}>{title}</h3>
-    </div>
+    </section>
   );
 }
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import Header from '../../components/Header';
-import Banner from '../../components/Banner';
+import Hero from '../../components/Hero';
 import homeStyle from './Home.module.css';
 import SmallCard from '../../components/SmallCard';
 import { ExploreData, LiveAnywhereData } from '../../db/db';
@@ -9,7 +9,7 @@ import MediumCard from '../../components/MediumCard';
 import LargeCard from '../../components/LargeCard';
 import Footer from '../../components/Footer';
 
-Home.propTypes = {};
+// Home.propTypes = {};
 
 function Home() {
   const [showSearch, setShowSearch] = useState(false);
@@ -27,7 +27,7 @@ function Home() {
   const handleScroll = () => {
     const positionY = window.scrollY;
     setPositionScroll(positionY);
-    console.log(positionY);
+
     if (positionY >= 80) {
       setShowSearch(true);
     } else {
@@ -42,34 +42,18 @@ function Home() {
   return (
     <>
       <Header showSearch={showSearch} />
-      <Banner />
-      <main className={homeStyle.main}>
-        <section className={homeStyle.location}>
-          <h2 className={`${homeStyle.title} ${homeStyle.p_b_5}`}>Explore Nearby</h2>
-          <div className={`${homeStyle.wrapper__sm_card} ${homeStyle.grid}`}>
-            {ExploreData?.map((item) => (
-              <SmallCard
-                key={item.img}
-                img={item.img}
-                distance={item.distance}
-                location={item.location}
-              />
-            ))}
-          </div>
-        </section>
-
-        <section>
-          <h2 className={`${homeStyle.title} ${homeStyle.p_y_8}`}>Live Anywhere</h2>
-
-          <div className={` ${homeStyle.wrapper__md_card} `}>
-            {LiveAnywhereData.map(({ img, title }) => (
-              <MediumCard key={img} img={img} title={title} />
-            ))}
-          </div>
-        </section>
-
+      <main>
+        <Hero />
+        <SmallCard ExploreData={ExploreData} />
         <LargeCard
-          img="https://airbnb-clone-taupe.vercel.app/_next/image?url=%2Fbigcards%2Ftryhosting.webp&w=1920&q=75"
+          img="https://a0.muscache.com/im/pictures/258b129d-d1cd-48b5-86d4-86206c13ebf7.jpg?im_w=1440"
+          title="Not sure where to go? Perfect."
+          buttonText="I'm flexible"
+          isBanner={true}
+        />
+        <MediumCard LiveAnywhereData={LiveAnywhereData} />
+        <LargeCard
+          img="https://a0.muscache.com/im/pictures/2595054e-d1d9-4fde-8046-58d51fcb3164.jpg?im_w=1440"
           title="Try hosting"
           description="Earn extra income and unlock new opportunities by sharing your space"
           buttonText="Learn more"

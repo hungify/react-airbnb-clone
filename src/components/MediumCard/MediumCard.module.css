@@ -1,10 +1,30 @@
+.md_card {
+  margin: 3rem 3rem 0;
+}
+
+.wrapper__card {
+  display: flex;
+  justify-content: space-between;
+
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+
+  padding: 0.5rem;
+}
+
+.title {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  padding-bottom: calc((5 / 4) * 16px);
+  font-weight: 600;
+  padding: calc((8 / 4) * 16px) 0;
+}
+
 .inner {
   cursor: pointer;
   scroll-snap-align: start;
   transition: all 0.15s ease-out;
-
-  margin-right: 0;
-  margin-left: 0.875rem;
+  margin: 3rem 3rem 0;
 }
 
 .inner:hover {
@@ -50,7 +70,7 @@
   border-radius: 0.75rem;
 }
 
-.title {
+.sub {
   margin-top: calc((3 / 4) * 16px);
   font-size: 1.5rem;
   line-height: 2rem;

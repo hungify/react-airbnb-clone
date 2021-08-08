@@ -2,11 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from './LargeCard.module.css';
 
-LargeCard.propTypes = {};
+LargeCard.propTypes = {
+  img: PropTypes.string,
+  title: PropTypes.string,
+  description: PropTypes.string,
+  buttonText: PropTypes.string,
+  isBanner: PropTypes.bool,
+};
 
-function LargeCard({ img, title, description, buttonText }) {
+function LargeCard({ img, title, description, buttonText, isBanner }) {
   return (
-    <section className={styled.hero__inner}>
+    <section className={isBanner ? `${styled.banner} ${styled.lg__card}` : `${styled.lg__card}`}>
       <div className={styled.wrapper__img}>
         <div>
           <img src={img} alt={title} className={styled.img} />

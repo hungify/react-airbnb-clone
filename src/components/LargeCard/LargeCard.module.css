@@ -1,7 +1,5 @@
-.hero__inner {
-  position: relative;
-  padding: calc((16 / 4) * 16px) 0;
-  cursor: pointer;
+.lg__card {
+  margin: 3rem 3rem 0;
 }
 
 .wrapper__img {
