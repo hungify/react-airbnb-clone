@@ -84,10 +84,12 @@
 }
 
 @media screen and (min-width: 1024px) {
+  .img__overlay {
+    height: 1200px;
+  }
 }
 
 @media screen and (min-width: 1280px) {
 }
-
 @media screen and (min-width: 1536px) {
 }

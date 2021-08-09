@@ -63,7 +63,7 @@ function Home({ onClickMode }) {
           buttonText="Learn more"
         />
       </main>
-      <Footer closeNavbar={closeNavbar} />
+      {/* <Footer closeNavbar={closeNavbar} /> */}
     </>
   );
 }

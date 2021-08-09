@@ -67,6 +67,38 @@ function Header({ showSearch, onClickMode }) {
               Online Experiences
             </a>
           </nav>
+          <div className={styled.wrapper__search}>
+            <div className={styled.wrapper__location}>
+              <h3 className={styled.title}>Location</h3>
+              <input
+                type="text"
+                className={styled.input__search}
+                placeholder="Where are you going?"
+              />
+            </div>
+
+            <div className={styled.wrapper__check_in}>
+              <h3 className={styled.title}>Check in</h3>
+              {/* <input type="date" className={styled.input__date} placeholder="Add dates" /> */}
+              <p className={styled.input__date}>Add dates</p>
+            </div>
+
+            <div className={styled.wrapper__check_out}>
+              <h3 className={styled.title}>Check out</h3>
+              {/* <input type="date" className={styled.input__date} placeholder="Add dates" /> */}
+              <p className={styled.input__date}>Add dates</p>
+            </div>
+
+            <div className={styled.wrapper__guests}>
+              <div>
+                <h3 className={styled.title}>Guests</h3>
+                {/* <input type="date" className={styled.input__date} placeholder="Add dates" /> */}
+                <p className={styled.input__date}>Add guests</p>
+              </div>
+
+              <SearchIcon className={styled.icon__search} />
+            </div>
+          </div>
         </div>
 
         <div className={styled.wrapper__profile}>
