@@ -1,24 +1,16 @@
 import { useContext, useState } from 'react';
 import './App.css';
-import { ThemeContext } from './context/GlobalContext';
+import { ThemeContext, getStyles } from './context/GlobalContext';
 import Home from './pages/Home';
 import Search from './pages/Search';
 
 function App() {
-  const theme = useContext(ThemeContext);
-  const [stateTheme, setStateTheme] = useState(theme.light);
-  const darkMode = () => {
-    setStateTheme(theme.dark);
-  };
-  const lightMode = () => {
-    setStateTheme(theme.light);
-  };
-
-  const handleChangeMode = () => {};
+  const { mode } = useContext(ThemeContext);
+  const styles = getStyles(mode);
 
   return (
-    <div className="App" style={{ backgroundColor: stateTheme }}>
-      <Home onClickMode={handleChangeMode} />
+    <div className="App" style={{ ...styles.background, ...styles.text }}>
+      <Home stylesMode={styles} />
       {/* <Search /> */}
     </div>
   );

@@ -1,16 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import styled from './NavBar.module.css';
 import { SearchIcon, HeartIcon, UserIcon } from '@heroicons/react/solid';
+
+import { getStyles, ThemeContext } from '../../context/GlobalContext';
 NavBar.propTypes = {
   closeNavbar: PropTypes.bool,
 };
 
 function NavBar({ closeNavbar }) {
-  console.log('🚀 ~ file: index.jsx ~ line 10 ~ NavBar ~ closeNavbar', closeNavbar);
+  const { mode } = useContext(ThemeContext);
+  const styles = getStyles(mode);
 
   return (
-    <nav className={closeNavbar ? `${styled.hidden}` : `${styled.navbar}`}>
+    <nav
+      className={closeNavbar ? `${styled.hidden}` : `${styled.navbar}`}
+      style={{ ...styles.background, ...styles.text, ...styles.fillColor }}
+    >
       <div className={styled.wrapper__link}>
         <a href="#" className={`${styled.link}  ${styled.active}`}>
           <div className={`${styled.group__icon}`}>

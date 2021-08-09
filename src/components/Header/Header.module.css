@@ -65,22 +65,35 @@ header {
   color: rgb(46, 46, 72);
 }
 .scrolled .globe__icon {
-  fill: rgb(46, 46, 72);
+  fill: #2e2e48;
 }
 
 .scrolled .switch__icon {
   fill: #2e2e48;
 }
 
+.scrolled.mode__dark .globe__icon {
+  fill: #fafafc;
+}
+
+.scrolled.mode__dark .switch__icon {
+  fill: #fafafc;
+}
+
 .scrolled .wrapper__search {
   opacity: 0;
 }
 
-/* -----------------LEFT HEADER---------------- */
-
-.logo__icon {
-  fill: #fff;
+.scrolled.mode__dark .link {
+  color: #fafafc;
 }
+
+.scrolled.mode__dark .search__mobile input,
+.scrolled.mode__dark .search__mobile input::placeholder {
+  color: #fff;
+}
+
+/* -----------------LEFT HEADER---------------- */
 
 /* -----------------MIDDLE HEADER---------------- */
 .navbar {
@@ -154,8 +167,7 @@ header {
 
 .wrapper__search > div:hover,
 input:hover {
-  background-color: #eee;
-
+  background-color: #efe5ff;
   cursor: pointer;
 }
 
@@ -332,18 +344,11 @@ input:hover {
 .wrapper__profile .link {
   display: none;
   white-space: nowrap;
-  font-size: 14px;
-}
-
-.scrolled .profile .link {
-  color: #666;
 }
 
 .globe {
   margin-right: 0;
   margin-left: 16px;
-
-  color: rgb(209, 213, 219);
 }
 
 .switch {
@@ -352,10 +357,7 @@ input:hover {
   outline: none;
   margin-right: 0;
   margin-left: 16px;
-  font-size: 14px;
-
   cursor: pointer;
-  font-size: 1.125rem;
 }
 
 .switch__icon {
@@ -367,9 +369,12 @@ input:hover {
 .globe__icon {
   height: calc((6 / 4) * 16px);
   cursor: pointer;
-  animation: spin 1s linear infinite;
-  fill: #fff;
+  fill: #fafafc;
 }
+.globe__icon:hover {
+  animation: spin 1s linear infinite;
+}
+
 @keyframes spin {
   from {
     transform: rotate(0deg);
@@ -382,38 +387,32 @@ input:hover {
 .menu {
   display: flex;
   align-items: center;
-
   margin-right: 0;
   margin-left: 16px;
-  padding: 0.5rem;
-
+  padding: 0.25rem 0.25rem 0.25rem 0.5rem;
   background-color: rgb(243, 244, 246);
 
   border: 2px solid;
-  padding: calc((2 / 4) * 16px);
 
   border-radius: 9999px;
 }
 
 .user__icon_circle {
-  color: rgb(46, 46, 72);
   height: 1.5rem;
   width: 1.5rem;
+  fill: #2e2e48;
 }
 
 .menu__icon {
   margin-right: 0;
-  margin-left: 0.5rem;
-
+  margin-right: 0.5rem;
   height: 1.5rem;
-
-  color: rgb(46, 46, 72);
+  fill: #2e2e48;
 }
 
 /* -------------SEARCH MOBILE------------- */
 
 .search__mobile {
-  display: flex;
   align-items: center;
 
   background-color: rgb(243, 244, 246);
@@ -448,7 +447,7 @@ input:hover {
 }
 
 .search__mobile .search__icon {
-  fill: #fff;
+  fill: #fafafc;
   border-radius: 9999px;
   cursor: pointer;
   height: 1.25rem;
@@ -470,6 +469,16 @@ input:hover {
   font-size: 1rem;
 
   margin-right: 10px;
+}
+
+/* -------------DARK MODE-----------*/
+.wrapper__search__dark > div:hover {
+  background-color: #002;
+}
+
+.scrolled .wrapper__profile,
+.scrolled .link {
+  color: rgb(46, 46, 72);
 }
 
 /* ------------Responsive------------------- */
@@ -523,7 +532,6 @@ input:hover {
 
   .scrolled .search__mobile {
     display: flex;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   }
 
   .wrapper__profile {
@@ -531,7 +539,7 @@ input:hover {
     align-items: center;
   }
   .wrapper__profile .link {
-    display: inline-flex;
+    display: flex;
   }
 }
 

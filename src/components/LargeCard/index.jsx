@@ -12,7 +12,7 @@ function LargeCard({ DiscoverData }) {
       <h2>Discover things to do</h2>
       <div className={styled.card__list}>
         {DiscoverData.map(({ title, description, img }) => (
-          <div className={styled.card}>
+          <div className={styled.card} key={title}>
             <div className={styled.wrapper__img}>
               <div>
                 <img src={img} alt={title} className={styled.img} />

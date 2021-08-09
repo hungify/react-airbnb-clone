@@ -37,9 +37,17 @@
   scroll-snap-align: start;
 }
 
+/* -------------DARK MODE------------ */
+.mode__dark .card__inner:hover {
+  background: #112;
+  box-shadow: rgb(72 72 72 / 6%) 0px 0.25rem 0.5rem;
+  overflow: hidden;
+  transform: scale(1.04);
+}
+
 .card__inner:hover {
-  background-color: rgba(243, 244, 246);
-  transform: scale(1.05);
+  background-color: #efe5ff;
+  transform: scale(1.04);
 }
 
 .wrapper__img {
@@ -86,14 +94,13 @@
   .wrapper__sm_card {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+  .card__inner {
+    overflow: hidden;
+  }
 }
 
 @media screen and (min-width: 1280px) {
   .wrapper__sm_card {
     grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
-  .card__inner {
-    overflow: hidden;
   }
 }

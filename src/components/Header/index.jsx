@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from './Header.module.css';
 import {
@@ -8,21 +8,31 @@ import {
   UsersIcon,
   UserCircleIcon,
   MoonIcon,
+  SunIcon,
 } from '@heroicons/react/solid';
 import { DateRangePicker } from 'react-date-range';
 import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
+import { useContext } from 'react';
+import { ThemeContext, getStyles } from '../../context/GlobalContext';
 
 Header.propTypes = {
   showSearch: PropTypes.bool,
-  onClickMode: PropTypes.func,
 };
 
-function Header({ showSearch, onClickMode }) {
+Header.defaultProps = {
+  showSearch: false,
+};
+
+function Header({ showSearch }) {
   const [searchInput, setSearchInput] = useState('');
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
   const [noOfGuests, setNoOfGuests] = useState();
+
+  const { setTheme, mode } = useContext(ThemeContext);
+
+  const styles = getStyles(mode);
 
   const selectionRange = {
     startDate: startDate,
@@ -39,8 +49,23 @@ function Header({ showSearch, onClickMode }) {
     setSearchInput('');
   };
 
+  const handleSwitch = () => {
+    setTheme();
+  };
+
   return (
-    <header className={showSearch ? `${styled.scrolled}` : null}>
+    <header
+      className={
+        mode === 'dark'
+          ? showSearch
+            ? `${styled.scrolled} ${styled.mode__dark}`
+            : null
+          : showSearch
+          ? `${styled.scrolled}`
+          : null
+      }
+      style={showSearch ? { ...styles.background, ...styles.text } : null}
+    >
       <div className={`${styled.wrapper__header}`}>
         <div className={styled.wrapper__logo}>
           <svg width="102" height="32" className={styled.logo__icon}>
@@ -48,7 +73,14 @@ function Header({ showSearch, onClickMode }) {
           </svg>
         </div>
 
-        <div className={styled.search__mobile}>
+        <div
+          className={styled.search__mobile}
+          style={
+            showSearch && mode === 'dark'
+              ? { ...styles.background, ...styles.text, ...styles.boxShadow }
+              : null
+          }
+        >
           <input type="text" placeholder="Where are you going?" />
           <button className={styled.btn__search}>
             <SearchIcon className={styled.search__icon} />
@@ -67,7 +99,14 @@ function Header({ showSearch, onClickMode }) {
               Online Experiences
             </a>
           </nav>
-          <div className={styled.wrapper__search}>
+          <div
+            className={
+              mode === 'dark'
+                ? `${styled.wrapper__search} ${styled.wrapper__search__dark}`
+                : `${styled.wrapper__search}`
+            }
+            style={{ ...styles.background, ...styles.text }}
+          >
             <div className={styled.wrapper__location}>
               <h3 className={styled.title}>Location</h3>
               <input
@@ -105,9 +144,13 @@ function Header({ showSearch, onClickMode }) {
           <a href="#" className={styled.link}>
             Become a host
           </a>
-          <button className={styled.switch}>
-            <MoonIcon className={styled.switch__icon} />
-          </button>
+          <div className={`${styled.switch} ${styled.link}`} onClick={handleSwitch}>
+            {mode === 'dark' ? (
+              <MoonIcon className={styled.switch__icon} />
+            ) : (
+              <SunIcon className={styled.switch__icon} />
+            )}
+          </div>
           <a href="" className={`${styled.link} ${styled.globe}`}>
             <GlobeAltIcon className={styled.globe__icon} />
           </a>

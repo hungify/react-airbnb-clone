@@ -1,10 +1,11 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import NavBar from '../Navbar';
-import PropTypes from 'prop-types';
 import styled from './Footer.module.css';
 
 Footer.propTypes = {
   closeNavbar: PropTypes.bool,
+  theme: PropTypes.object,
 };
 
 function Footer({ closeNavbar }) {

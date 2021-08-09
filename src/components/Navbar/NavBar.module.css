@@ -11,7 +11,7 @@
   position: sticky;
   bottom: 0;
   width: 100%;
-  background-color: #fff;
+  background-color: red;
   padding: 0.5rem;
   border-top: 1px solid #ebebeb;
 }
@@ -31,7 +31,7 @@
   text-align: center;
   max-width: 20%;
   padding: 0 2px;
-  color: rgb(72, 72, 72);
+  color: inherit;
 }
 
 .link.active {
@@ -50,6 +50,7 @@
 .icon {
   cursor: pointer;
   height: 1.75rem;
+  fill: inherit;
 }
 
 .group__icon p {

@@ -44,7 +44,7 @@ function Home({ onClickMode }) {
   };
   return (
     <>
-      <Header showSearch={showSearch} onClickMode={onClickMode} />
+      <Header showSearch={showSearch} />
       <main>
         <Hero />
         <SmallCard ExploreData={ExploreData} />
@@ -63,7 +63,7 @@ function Home({ onClickMode }) {
           buttonText="Learn more"
         />
       </main>
-      {/* <Footer closeNavbar={closeNavbar} /> */}
+      <Footer closeNavbar={closeNavbar} />
     </>
   );
 }
