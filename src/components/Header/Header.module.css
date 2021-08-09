@@ -42,7 +42,34 @@ header {
 }
 
 .logo__icon {
-  color: #fff;
+  fill: #fff;
+}
+
+/* --------------WHEN USER SCROLLING-------------------*/
+
+.scrolled {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  background-color: #fafafc;
+  transition: all 0.5s ease-in;
+
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.scrolled .logo__icon {
+  fill: rgba(236, 72, 153);
+}
+
+.scrolled .wrapper__profile,
+.scrolled .link {
+  color: rgb(46, 46, 72);
+}
+.scrolled .globe__icon {
+  fill: rgb(46, 46, 72);
+}
+
+.scrolled .switch__icon {
+  fill: #2e2e48;
 }
 
 /* -----------------LEFT HEADER---------------- */
@@ -252,7 +279,6 @@ header {
 
 .users__icon {
   height: calc((5 / 4) * 16px);
-
   color: rgba(248, 113, 113);
 }
 
@@ -325,10 +351,6 @@ header {
   fill: #fafafc;
 }
 
-.scrolled .switch__icon {
-  fill: #2e2e48;
-}
-
 .globe__icon {
   height: calc((6 / 4) * 16px);
   cursor: pointer;
@@ -375,21 +397,6 @@ header {
   color: rgb(46, 46, 72);
 }
 
-/* --------------WHEN USER SCROLLING-------------------*/
-
-.scrolled {
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  background-color: #fafafc;
-  transition: all 0.5s ease-in;
-
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-
-.scrolled .logo__icon {
-  fill: rgba(236, 72, 153);
-}
-
 /* -------------SEARCH MOBILE------------- */
 
 .search__mobile {
@@ -420,8 +427,11 @@ header {
   background-color: transparent;
   flex: 1;
 }
-.search__mobile input:placeholder {
-  background-color: rgb(55, 65, 81);
+.search__mobile input::placeholder {
+  color: rgb(46, 46, 72);
+
+  font-weight: 500;
+  font-size: 1.2rem;
 }
 
 .search__mobile .search__icon {
@@ -458,7 +468,9 @@ header {
   }
 
   .search__mobile input {
-    font-size: 0.875rem;
+    color: rgb(46, 46, 72);
+    font-weight: 500;
+    font-size: 1.2rem;
   }
 
   .wrapper__logo {
@@ -476,13 +488,6 @@ header {
   .wrapper__profile {
     display: flex;
   }
-
-  /* .icon__search {
-    display: inline-flex;
-
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-  } */
 
   .profile {
     display: flex;
