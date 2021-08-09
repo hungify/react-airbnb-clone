@@ -7,6 +7,7 @@ import {
   GlobeAltIcon,
   UsersIcon,
   UserCircleIcon,
+  MoonIcon,
 } from '@heroicons/react/solid';
 import { DateRangePicker } from 'react-date-range';
 import 'react-date-range/dist/styles.css'; // main style file
@@ -14,9 +15,10 @@ import 'react-date-range/dist/theme/default.css'; // theme css file
 
 Header.propTypes = {
   showSearch: PropTypes.bool,
+  onClickMode: PropTypes.func,
 };
 
-function Header({ showSearch }) {
+function Header({ showSearch, onClickMode }) {
   const [searchInput, setSearchInput] = useState('');
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
@@ -48,10 +50,12 @@ function Header({ showSearch }) {
 
         <div className={styled.search__mobile}>
           <input type="text" placeholder="Where are you going?" />
-          <SearchIcon className={styled.search__icon} />
+          <button className={styled.btn__search}>
+            <SearchIcon className={styled.search__icon} />
+          </button>
         </div>
 
-        <div className={styled.wrapper__search_inner}>
+        <div className={styled.wrapper__nav}>
           <nav className={styled.navbar}>
             <a href="#" className={`${styled.link} ${styled.active}`}>
               Places to stay
@@ -63,46 +67,16 @@ function Header({ showSearch }) {
               Online Experiences
             </a>
           </nav>
-
-          <div className={styled.wrapper__search}>
-            <div className={styled.wrapper__location}>
-              <h3 className={styled.title}>Location</h3>
-              <input
-                type="text"
-                className={styled.input__search}
-                placeholder="Where are you going?"
-              />
-            </div>
-
-            <div className={styled.wrapper__check_in}>
-              <h3 className={styled.title}>Check in</h3>
-              {/* <input type="date" className={styled.input__date} placeholder="Add dates" /> */}
-              <p className={styled.input__date}>Add dates</p>
-            </div>
-
-            <div className={styled.wrapper__check_out}>
-              <h3 className={styled.title}>Check out</h3>
-              {/* <input type="date" className={styled.input__date} placeholder="Add dates" /> */}
-              <p className={styled.input__date}>Add dates</p>
-            </div>
-
-            <div className={styled.wrapper__guests}>
-              <div>
-                <h3 className={styled.title}>Guests</h3>
-                {/* <input type="date" className={styled.input__date} placeholder="Add dates" /> */}
-                <p className={styled.input__date}>Add guests</p>
-              </div>
-
-              <SearchIcon className={styled.icon__search} />
-            </div>
-          </div>
         </div>
 
-        <div className={styled.profile}>
+        <div className={styled.wrapper__profile}>
           <a href="#" className={styled.link}>
             Become a host
           </a>
-          <a href="" className={`${styled.link} ${styled.wrapper_globe}`}>
+          <button className={styled.switch}>
+            <MoonIcon className={styled.switch__icon} />
+          </button>
+          <a href="" className={`${styled.link} ${styled.globe}`}>
             <GlobeAltIcon className={styled.globe__icon} />
           </a>
           <div className={styled.menu}>
@@ -111,7 +85,7 @@ function Header({ showSearch }) {
           </div>
         </div>
 
-        {searchInput && (
+        {/* {searchInput && (
           <div className={styled.wrapper__date}>
             <DateRangePicker
               ranges={[selectionRange]}
@@ -141,7 +115,7 @@ function Header({ showSearch }) {
               </div>
             </div>
           </div>
-        )}
+        )} */}
       </div>
     </header>
   );

@@ -93,7 +93,7 @@
   color: rgb(34, 34, 34);
 }
 
-p {
+.lg__card p {
   margin-bottom: 1.5rem;
 }
 
@@ -105,6 +105,11 @@ p {
 .button:hover,
 .button:focus {
   box-shadow: 0 0 0 2px #262648, 0 0 0 4px #fafafc;
+}
+
+.banner .button:hover,
+.button:focus {
+  box-shadow: 0 0 0 2px #ffffd6, 0 0 0 4px #3f3f1a;
 }
 
 .button:active {

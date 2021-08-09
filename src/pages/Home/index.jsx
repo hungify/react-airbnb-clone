@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import Header from '../../components/Header';
 import Hero from '../../components/Hero';
 import homeStyle from './Home.module.css';
@@ -10,9 +10,11 @@ import ExtraLargeCard from '../../components/ExtraLargeCard';
 import Footer from '../../components/Footer';
 import LargeCard from '../../components/LargeCard';
 
-// Home.propTypes = {};
+Home.propTypes = {
+  onClickMode: PropTypes.func,
+};
 
-function Home() {
+function Home({ onClickMode }) {
   const [showSearch, setShowSearch] = useState(false);
   const [closeNavbar, setCloseNavBar] = useState(false);
   const [positionScroll, setPositionScroll] = useState(0);
@@ -42,7 +44,7 @@ function Home() {
   };
   return (
     <>
-      <Header showSearch={showSearch} />
+      <Header showSearch={showSearch} onClickMode={onClickMode} />
       <main>
         <Hero />
         <SmallCard ExploreData={ExploreData} />

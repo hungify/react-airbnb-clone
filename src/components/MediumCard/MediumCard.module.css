@@ -8,23 +8,19 @@
 }
 
 .wrapper__card {
-  display: flex;
-  justify-content: space-between;
-
-  padding: 0.5rem 0;
-
-  overflow-x: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 80%);
+  grid-template-rows: 1fr;
+  overflow: scroll;
+  margin: 0px -1.5rem -1.5rem;
+  padding: 1.5rem;
   scroll-snap-type: x mandatory;
+  scroll-padding-left: 1.5rem;
 }
 
 .card__inner {
   cursor: pointer;
   scroll-snap-align: start;
-}
-
-.card__inner:not(:first-child) {
-  margin-right: 0;
-  margin-left: 15px;
 }
 
 .card__inner:hover .img {
@@ -80,11 +76,17 @@
 }
 
 @media screen and (min-width: 640px) {
+  .wrapper__img {
+    height: 20rem;
+    width: 20rem;
+  }
 }
 
 @media screen and (min-width: 768px) {
   .wrapper__card {
     padding: 2rem 0;
+    overflow: hidden;
+    grid-template-columns: repeat(4, 1fr);
   }
   .wrapper__img {
     height: 20rem;
@@ -96,16 +98,23 @@
   .wrapper__card {
     padding: 2rem 0;
   }
+
+  .wrapper__img {
+    height: 13rem;
+    width: 13rem;
+  }
 }
 
 @media screen and (min-width: 1280px) {
   .card__inner {
     margin: 0;
   }
+
   .wrapper__img {
     height: 17rem;
     width: 17rem;
   }
+
   .wrapper__card {
     overflow: hidden;
   }
@@ -116,7 +125,7 @@
 
 @media screen and (min-width: 1536px) {
   .wrapper__img {
-    height: 20rem;
-    width: 20rem;
+    height: 22rem;
+    width: 22rem;
   }
 }

@@ -9,16 +9,20 @@
 
 .card__list {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-
-  gap: 1.5rem;
-  padding: 1.5rem 0px;
+  grid-template-columns: repeat(3, 80%);
+  grid-template-rows: 1fr;
+  overflow-x: scroll;
+  margin: 0px -1.5rem -1.5rem;
+  padding: 1.5rem;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: 1.5rem;
 }
 
 .card {
   cursor: pointer;
   display: flex;
   flex-direction: column;
+  scroll-snap-align: start;
 }
 
 .wrapper__img {
@@ -78,15 +82,22 @@
 }
 
 @media screen and (min-width: 768px) {
+  .card__list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    overflow: hidden;
+  }
   .wrapper__img {
-    width: 24rem;
-    height: 24rem;
+    width: 13rem;
+    height: 13rem;
   }
 }
 @media screen and (min-width: 1024px) {
   .wrapper__img {
-    width: 19rem;
-    height: 19rem;
+    width: 18rem;
+    height: 18rem;
+  }
+  .wrapper__text {
+    max-width: 70%;
   }
 }
 
@@ -95,11 +106,22 @@
     width: 24rem;
     height: 24rem;
   }
+
+  .wrapper__text {
+    max-width: 100%;
+  }
 }
 
 @media screen and (min-width: 1440px) {
   .wrapper__img {
     width: 27rem;
     height: 27rem;
+  }
+}
+
+@media screen and (min-width: 1536px) {
+  .wrapper__img {
+    width: 30rem;
+    height: 30rem;
   }
 }
