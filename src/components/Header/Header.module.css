@@ -31,7 +31,6 @@ header {
 
 .wrapper__nav {
   display: none;
-  transition: all 0.2s ease 0s;
 }
 
 .wrapper__profile {
@@ -173,7 +172,6 @@ input:hover {
   outline: 2px solid transparent;
   outline-offset: 2px;
   border: none;
-
   font-size: 0.875rem;
   line-height: 1.25rem;
   background-color: transparent;
@@ -338,9 +336,7 @@ input:hover {
 }
 
 /* ---------------WHEN USER CLICK SEARCH MOBILE -> SHOW SEARCH NAVBAR------------- */
-.scrolled .wrapper__nav.visible {
-  /* display: flex; */
-}
+
 .scrolled .visible .wrapper__search {
   display: grid;
 }
@@ -498,6 +494,14 @@ input:hover {
     padding-left: 3rem;
     padding-right: 3rem;
   }
+  .wrapper__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .scrolled .wrapper__nav {
+    display: none;
+  }
 
   .search__mobile input {
     color: rgb(46, 46, 72);
@@ -527,15 +531,6 @@ input:hover {
 }
 
 @media screen and (min-width: 1024px) {
-  .scrolled .wrapper__nav {
-    display: none;
-  }
-  .wrapper__nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-  }
-
   .search__mobile {
     display: none;
   }
