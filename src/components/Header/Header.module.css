@@ -36,7 +36,10 @@ header {
 
 .wrapper__profile {
   display: none;
-  justify-content: flex-end;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   color: rgba(107, 114, 128, 0.6);
 }
@@ -80,10 +83,6 @@ header {
   fill: #fafafc;
 }
 
-.scrolled .wrapper__search {
-  opacity: 0;
-}
-
 .scrolled.mode__dark .link {
   color: #fafafc;
 }
@@ -99,7 +98,7 @@ header {
 .navbar {
   color: rgb(229, 231, 235);
   column-gap: 2rem;
-
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -155,8 +154,7 @@ header {
   position: absolute;
   display: grid;
   top: 75%;
-  width: max-content;
-  transform: translateX(7%);
+  transform: translateX(-3%);
   grid-template-columns: repeat(4, minmax(0, 1fr));
   margin: 1.5rem 0px;
 
@@ -339,6 +337,18 @@ input:hover {
   color: rgba(107, 114, 128);
 }
 
+/* ---------------WHEN USER CLICK SEARCH MOBILE -> SHOW SEARCH NAVBAR------------- */
+.scrolled .wrapper__nav.visible {
+  /* display: flex; */
+}
+.scrolled .visible .wrapper__search {
+  display: grid;
+}
+
+.wrapper__location input:focus {
+  background-color: red;
+}
+
 /* -----------------RIGHT HEADER---------------- */
 
 .wrapper__profile .link {
@@ -414,7 +424,7 @@ input:hover {
 
 .search__mobile {
   align-items: center;
-
+  display: flex;
   background-color: rgb(243, 244, 246);
 
   border-width: 2px;
@@ -535,16 +545,19 @@ input:hover {
   }
 
   .wrapper__profile {
-    display: flex;
     align-items: center;
+    flex-direction: row;
   }
   .wrapper__profile .link {
     display: flex;
+  }
+  .wrapper__search {
+    transform: translateX(10%);
   }
 }
 
 @media screen and (min-width: 1280px) {
   .wrapper__search {
-    transform: none;
+    transform: translate(45%);
   }
 }

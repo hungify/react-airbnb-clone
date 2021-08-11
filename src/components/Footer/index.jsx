@@ -54,6 +54,11 @@ function Footer({ closeNavbar }) {
         </div>
       </footer>
       <NavBar closeNavbar={closeNavbar} />
+      <div className={styled.wrapper}>
+        <div className={styled.road}></div>
+        <div className={styled.sun}></div>
+        <div className={styled.cloud}></div>
+      </div>
     </>
   );
 }

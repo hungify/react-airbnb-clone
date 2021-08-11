@@ -15,7 +15,6 @@ Home.propTypes = {
 };
 
 function Home({ onClickMode }) {
-  const [showSearch, setShowSearch] = useState(false);
   const [closeNavbar, setCloseNavBar] = useState(false);
   const [positionScroll, setPositionScroll] = useState(0);
 
@@ -31,11 +30,6 @@ function Home({ onClickMode }) {
     const positionY = window.scrollY;
     setPositionScroll(positionY);
 
-    if (positionY >= 80) {
-      setShowSearch(true);
-    } else {
-      setShowSearch(false);
-    }
     if (positionY >= 600) {
       setCloseNavBar(true);
     } else {
@@ -44,7 +38,7 @@ function Home({ onClickMode }) {
   };
   return (
     <>
-      <Header showSearch={showSearch} />
+      <Header positionY={positionScroll} />
       <main>
         <Hero />
         <SmallCard ExploreData={ExploreData} />
