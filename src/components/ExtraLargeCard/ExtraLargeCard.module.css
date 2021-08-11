@@ -1,5 +1,5 @@
 .lg__card {
-  margin: 3rem 3rem 0;
+  margin: 2rem 1rem 0;
 }
 
 .wrapper__img {
@@ -124,6 +124,9 @@
     padding-right: 40px;
     padding-top: 0;
     color: #fff;
+  }
+  .lg__card {
+    margin: 3rem 3rem 0;
   }
 }
 
