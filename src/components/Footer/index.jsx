@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import MyLife from '../MyLife';
 import NavBar from '../Navbar';
 import styled from './Footer.module.css';
 
@@ -54,11 +55,7 @@ function Footer({ closeNavbar }) {
         </div>
       </footer>
       <NavBar closeNavbar={closeNavbar} />
-      <div className={styled.wrapper}>
-        <div className={styled.road}></div>
-        <div className={styled.sun}></div>
-        <div className={styled.cloud}></div>
-      </div>
+      <MyLife />
     </>
   );
 }

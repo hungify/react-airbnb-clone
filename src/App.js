@@ -1,8 +1,7 @@
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import './App.css';
-import { ThemeContext, getStyles } from './context/GlobalContext';
+import { getStyles, ThemeContext } from './context/GlobalContext';
 import Home from './pages/Home';
-import Search from './pages/Search';
 
 function App() {
   const { mode } = useContext(ThemeContext);
@@ -11,6 +10,7 @@ function App() {
   return (
     <div className="App" style={{ ...styles.background, ...styles.text }}>
       <Home stylesMode={styles} />
+
       {/* <Search /> */}
     </div>
   );

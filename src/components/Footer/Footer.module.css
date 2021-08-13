@@ -33,60 +33,6 @@ footer {
   overflow: hidden;
 }
 
-.road {
-  height: 100%;
-  width: calc(100% + 1440px);
-  background-repeat: repeat-x;
-  margin-left: -1440px;
-  background-image: url(../../images/road.svg);
-  -webkit-animation: forward 96s linear infinite;
-  animation: forward 96s linear infinite;
-}
-
-.cloud {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-image: url(../../images/cloud.svg);
-  animation: forward 256s linear infinite reverse;
-
-  height: 100%;
-  width: calc(100% + 1440px);
-  background-repeat: repeat-x;
-  margin-left: -1440px;
-}
-
-@keyframes forward {
-  from {
-    transform: translate(90vw);
-  }
-
-  to {
-    transform: translate(0);
-  }
-}
-
-.sun {
-  position: absolute;
-  top: 0;
-  left: 30%;
-  background-image: url(../../images/sun.svg);
-  height: 50px;
-  width: 50px;
-
-  -webkit-animation: spin 36s linear infinite;
-  animation: spin 36s linear infinite;
-}
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 @media screen and (min-width: 640px) {
 }
 
